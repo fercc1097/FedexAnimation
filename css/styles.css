@@ -1,0 +1,213 @@
+:root{
+    --main-color: #462895;
+    --second-color: #FF7A08;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+div{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    padding: 100px 200px;
+    background-color: rgb(209, 209, 253);
+    width: 640px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+.logo-container{
+    width: 640px;
+    height: 200px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+.letter-f{
+    height: 100%;
+    width: 115px;
+    display: flex;
+    flex-direction: column;
+}
+.f-first{
+    display: block;
+    opacity: 0;
+    width: 115px;
+    min-height: 43px;
+    background-color: var(--main-color);
+}
+.f-second-container{
+    width: 115px;
+    height: 100%;
+    display: flex;
+}
+.f-second{
+    width: 50px;
+    height: 100%;
+    background-color:var(--main-color) ;
+    margin-top: -10px;
+}
+.f-third{
+    display: block;
+    width: 58px;
+    height: 40px;
+    background-color: var(--main-color);
+    margin-top: 30px;
+
+}
+.letters-e-d{
+height: 200px;
+width: 275px;
+background-image: url(../img/ed.png);
+background-repeat: no-repeat;
+margin-left: -20px;
+display: flex;
+justify-content: flex-end;
+}
+.d-first{
+    margin-top: -10px;
+    margin-right: 1px;
+    height: 100%;
+    width: 44px;
+    background-color: var(--main-color);
+}
+.letter-E{
+    width: 45px;
+    height: 100%;
+    margin-top: -8px;
+    margin-left: -1px;
+    display: flex;
+    align-items: flex-end;
+}
+.letter-E--first{
+    width: 45px;
+    height: 100%;
+    background-color: var(--second-color);
+}
+
+.letters-e-x{
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    width: 225px;
+    margin-bottom: 7px;
+}
+
+.ex-element{
+    height: 123px;
+    width: 225px;
+    background-image: url(../img/ex.png);
+    background-repeat: no-repeat;
+    margin-left: 0px;
+
+}
+.letter-E-second{
+    width: 60px;
+    height: 44px;
+    background-color: var(--second-color);
+    margin-bottom: 26px;
+}
+.arrow-left{
+    width: 178px;
+    height: 86px; 
+    position: absolute;
+    top: 71px;
+    left: -150px;
+    display: flex;
+    align-items: center;
+    animation-name: arrow-left;
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(.36,.04,.4,1.41);
+    /* transform: translateY(-21px) translateX(-200px);
+    transition-duration: 1s;
+    transition-delay: 250ms;
+    transition-timing-function: cubic-bezier(.36,.04,.4,1.41); */
+}
+.arrow-left--body{
+    width: 88px;
+    height: 43px;
+    background-color: var(--main-color);
+    animation-name: arrow-left-body;
+    animation-duration: 3s;
+}
+.arrow-left--direction{
+    width: 0;
+    height: 0;
+    border-left: 43px solid var(--main-color);
+    border-right: 43px solid rgba(165, 42, 124, 0);
+    border-top: 43px solid rgba(42, 106, 165, 0);
+    border-bottom: 43px solid rgba(147, 165, 42, 0);
+    animation-name: arrow-left-direction;
+    animation-duration: 3s;
+}
+/* .container:hover .arrow{
+    transform: translateY(-21px) translateX(50px);
+} */
+
+@keyframes arrow-left{
+    0%{
+        left: -150px;
+        -webkit-transform: rotate(0deg);
+
+    }
+    20%{
+        
+        left: calc(30px);
+        -webkit-transform: rotate(0deg);
+
+    }
+    40%{
+        left: 1080px;
+        -webkit-transform: rotate(0deg);
+
+    }
+    41%{
+        -webkit-transform: rotate(180deg);
+    }
+    100%{
+        -webkit-transform: rotate(180deg);
+        left: -300px;
+    }
+}
+@keyframes arrow-left-body{
+    0%{
+        background-color: var(--main-color);
+    }
+    48%{
+        background-color: var(--main-color);
+    }
+    50%{
+        background-color: var(--second-color);
+    }
+    60%{
+        background-color: var(--second-color);
+    }
+    100%{
+        background-color: var(--second-color);
+    }
+}
+
+@keyframes arrow-left-direction{
+    0%{
+        border-left: 43px solid var(--main-color);
+    }
+    48%{
+        border-left: 43px solid var(--main-color);
+    }
+    50%{
+        border-left: 43px solid var(--second-color);
+    }
+    60%{
+        border-left: 43px solid var(--second-color);
+    }
+    100%{
+        border-left: 43px solid var(--second-color);
+    }
+}
