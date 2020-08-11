@@ -1,6 +1,7 @@
 :root{
     --main-color: #462895;
     --second-color: #FF7A08;
+    --calc-color: rgba(190, 90, 90, 0.5);
 }
 
 body{
@@ -29,19 +30,53 @@ div{
     display: flex;
     overflow: hidden;
     position: relative;
+    animation: rotate;
+    animation-duration: 1s;
+    animation-delay: 10.5s;
+    animation-fill-mode: forwards;
 }
+@keyframes rotate{
+    0%{
+    transform-origin: 100% 100%;
+    transform: rotate(0deg);
+    }
+    50%{
+    transform-origin: 100% 100%;
+    transform: rotate(10deg);
+    }
+    0%{
+        transform-origin: 100% 100%;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes show-element{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
 .letter-f{
     height: 100%;
     width: 115px;
     display: flex;
     flex-direction: column;
 }
+
+
 .f-first{
     display: block;
     opacity: 0;
     width: 115px;
     min-height: 43px;
     background-color: var(--main-color);
+    animation: show-element;
+    animation-delay: 1.2s;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
 }
 .f-second-container{
     width: 115px;
@@ -53,6 +88,11 @@ div{
     height: 100%;
     background-color:var(--main-color) ;
     margin-top: -10px;
+    opacity: 0;
+    animation: show-element;
+    animation-delay: 3.4s;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
 }
 .f-third{
     display: block;
@@ -60,16 +100,39 @@ div{
     height: 40px;
     background-color: var(--main-color);
     margin-top: 30px;
+    opacity: 0;
+    animation: show-element;
+    animation-delay: 8.6s;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
 
+}
+.ed-container{
+height: 200px;
+width: 275px;
+margin-left: -20px;
+display: flex;
+justify-content: flex-end;
+opacity: 1;
+position: relative;
 }
 .letters-e-d{
 height: 200px;
 width: 275px;
 background-image: url(../img/ed.png);
 background-repeat: no-repeat;
-margin-left: -20px;
 display: flex;
 justify-content: flex-end;
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+opacity:0;
+animation: show-element;
+animation-delay: 7.4s;
+animation-duration: .6s;
+animation-fill-mode: forwards;
 }
 .d-first{
     margin-top: -10px;
@@ -77,6 +140,11 @@ justify-content: flex-end;
     height: 100%;
     width: 44px;
     background-color: var(--main-color);
+    opacity: 0;
+    animation: show-element;
+    animation-delay: 5.4s;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
 }
 .letter-E{
     width: 45px;
@@ -90,6 +158,11 @@ justify-content: flex-end;
     width: 45px;
     height: 100%;
     background-color: var(--second-color);
+    opacity: 0;
+    animation: show-element;
+    animation-delay: 2.4s;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
 }
 
 .letters-e-x{
@@ -106,6 +179,11 @@ justify-content: flex-end;
     background-image: url(../img/ex.png);
     background-repeat: no-repeat;
     margin-left: 0px;
+    opacity: 0;
+    animation: show-element;
+    animation-delay: 4.7s;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
 
 }
 .letter-E-second{
@@ -113,18 +191,26 @@ justify-content: flex-end;
     height: 44px;
     background-color: var(--second-color);
     margin-bottom: 26px;
+    opacity: 0;
+    animation: show-element;
+    animation-delay: 6.4s;
+    animation-duration: .6s;
+    animation-fill-mode: forwards;
 }
+
+/* Arrow Left Start */
+
 .arrow-left{
     width: 178px;
     height: 86px; 
     position: absolute;
     top: 71px;
-    left: -150px;
+    left: -130px;
     display: flex;
     align-items: center;
     animation-name: arrow-left;
-    animation-duration: 3s;
-    animation-timing-function: cubic-bezier(.36,.04,.4,1.41);
+    animation-duration: 11s;
+    animation-timing-function: cubic-bezier(.49,0,.81,1.44);
     /* transform: translateY(-21px) translateX(-200px);
     transition-duration: 1s;
     transition-delay: 250ms;
@@ -135,7 +221,7 @@ justify-content: flex-end;
     height: 43px;
     background-color: var(--main-color);
     animation-name: arrow-left-body;
-    animation-duration: 3s;
+    animation-duration: 11s;
 }
 .arrow-left--direction{
     width: 0;
@@ -145,7 +231,7 @@ justify-content: flex-end;
     border-top: 43px solid rgba(42, 106, 165, 0);
     border-bottom: 43px solid rgba(147, 165, 42, 0);
     animation-name: arrow-left-direction;
-    animation-duration: 3s;
+    animation-duration: 8s;
 }
 /* .container:hover .arrow{
     transform: translateY(-21px) translateX(50px);
@@ -155,42 +241,118 @@ justify-content: flex-end;
     0%{
         left: -150px;
         -webkit-transform: rotate(0deg);
-
+        top: 71px;
     }
-    20%{
+    9%{
         
         left: calc(30px);
         -webkit-transform: rotate(0deg);
-
+        top: 71px;
     }
-    40%{
+    18%{
         left: 1080px;
         -webkit-transform: rotate(0deg);
-
+        top: 71px;
     }
-    41%{
+    53%{
+        /* Empty space */
+        left: 1080px;
+        -webkit-transform: rotate(0deg);
+        top: 71px;
+    }
+    /* 1 */
+    54%{
         -webkit-transform: rotate(180deg);
+        left: 1080px;
+        top: 71px;
     }
-    100%{
+    64%{
         -webkit-transform: rotate(180deg);
         left: -300px;
+        opacity: 1;
+        top: 71px;
     }
+    70%{
+        /* Empty Space */
+        -webkit-transform: rotate(180deg);
+        left: -300px;
+        opacity: 1;
+        top: 71px;
+    }
+    /* 2 */
+    71%{
+        -webkit-transform: rotate(180deg) rotate(180deg);
+        left: -300px;
+        opacity: 0;
+        top: 71px;
+    }
+    72%{
+        opacity: 0;
+        -webkit-transform: rotate(180deg) scale(1);
+        left: 1080px;
+        top: 150px;
+    }        
+    73%{
+        opacity: 1;
+        -webkit-transform: rotate(180deg) scale(1);
+        left: 1080px;
+        top: 150px;
+    }
+    82%{
+        -webkit-transform: rotate(180deg) scale(1);
+        left: -300px;
+        top: 150px;
+    }
+    100%{
+        -webkit-transform: rotate(180deg) scale(1);
+        left: -300px;
+        top: 150px;
+    }
+    /* 3 */
 }
 @keyframes arrow-left-body{
     0%{
         background-color: var(--main-color);
     }
-    48%{
+    9%{
         background-color: var(--main-color);
     }
-    50%{
+    18%{
+        background-color: var(--main-color);
+    }
+    43%{
+        background-color: var(--main-color);
+    }
+    53%{
         background-color: var(--second-color);
     }
-    60%{
+    /* 1 */
+    54%{
         background-color: var(--second-color);
+    }
+    64%{
+        background-color: var(--second-color);
+    }
+    70%{
+        /* Empty Space */
+        background-color: var(--second-color);
+    }
+    /* 2 */
+    71%{
+        background-color: var(--main-color);
+    }
+    72%{
+        background-color: var(--main-color);
+    }        
+    73%{
+        background-color: var(--main-color);
+    }
+    82%{
+        background-color: var(--main-color);
+
     }
     100%{
-        background-color: var(--second-color);
+        background-color: var(--main-color);
     }
 }
 
@@ -209,5 +371,327 @@ justify-content: flex-end;
     }
     100%{
         border-left: 43px solid var(--second-color);
+    }
+}
+
+/* Arrow left finish */
+
+/* Arrow up begins */
+
+.arrow-up{
+    width: 86px;
+    height: 131px; 
+    position: absolute;
+    /* top: 71px;
+    left: -150px; */
+    bottom: -200px;
+    left: 549px;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    transform: scale(1.2);
+    animation-name: arrow-up;
+    /* animation-delay: 1s; */
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    z-index: 1;
+
+}
+.arrow-up--body{
+    width: 43px;
+    height: 88px;
+    background-color: var(--second-color);
+    animation-name: arrow-up--body;
+    animation-duration: 10s;
+}
+.arrow-up--direction{
+    width: 0;
+    height: 0;
+    border-bottom: 43px solid var(--second-color);
+    border-right: 43px solid rgba(165, 42, 124, 0);
+    border-top: 0px solid rgba(42, 106, 165, 0);
+    border-left: 43px solid rgba(147, 165, 42, 0);
+    animation-name: arrow-up--direction;
+    animation-duration: 10s;
+}
+@keyframes arrow-up{
+    0%{
+        bottom: -150px;
+        -webkit-transform: rotate(0deg);
+        opacity: 1;
+    }
+    20%{
+        bottom: -150px;
+        -webkit-transform: rotate(0deg);
+        opacity: 1;
+    }
+    30%{
+        bottom: 680px;
+        -webkit-transform: rotate(0deg);
+        left: 549px;
+        -webkit-transform: scale(1.2);
+    }
+    31%{
+        -webkit-transform: rotate(180deg) scale(1.3);
+        /* -webkit-transform: scale(1.3); */
+
+        left: 180px;
+    }
+    40%{
+        -webkit-transform: rotate(180deg) scale(1.3);
+        bottom: -300px;
+        left: 180px;
+        opacity: 1;
+    }
+    48%{
+        opacity: 0;
+        bottom: -300px;
+        -webkit-transform: rotate(180deg);
+    }
+    49%{
+        opacity: 0;
+        left: 549px;
+        bottom: 680px;
+        -webkit-transform: rotate(180deg);
+    }
+    50%{
+        opacity: 1;
+        left: 507px;
+        bottom: 680px;
+        -webkit-transform: rotate(180deg);
+    }
+    60%{
+        opacity: 1;
+        left: 507px;
+        bottom: -300px;
+        -webkit-transform: rotate(180deg);
+    }
+    68%{
+        opacity: 0;
+        bottom: -300px;
+    }
+    69%{
+        opacity: 0;
+        left: 320px;
+        bottom: 680px;
+        -webkit-transform: rotate(180deg) scale(3.3);
+    }
+    70%{
+        opacity: 1;
+        left: 320px;
+        bottom: 680px;
+        -webkit-transform: rotate(180deg) scale(3.3);
+    }
+    80%{
+        opacity: 1;
+        left: 320px;
+        bottom: -300px;
+        -webkit-transform: rotate(180deg) scale(3.3);
+    }
+    100%{
+        opacity: 1;
+        left: 320px;
+        bottom: -300px;
+        -webkit-transform: rotate(180deg) scale(3.3);
+    }
+}
+@keyframes arrow-up--body{
+    0%{
+        
+        background-color: var(--second-color);
+    }
+    29%{
+        background-color: var(--second-color);
+    }
+    30%{
+        background-color: var(--main-color);
+    }
+    40%{
+        background-color: var(--main-color);
+    }
+    100%{
+        background-color: var(--main-color);
+    }
+}
+@keyframes arrow-up--direction{
+    0%{
+        border-bottom: 43px solid var(--second-color);
+    }
+    29%{
+        border-bottom: 43px solid var(--second-color);
+    }
+    30%{
+        border-bottom: 43px solid var(--main-color);
+    }
+    40%{
+        border-bottom: 43px solid var(--main-color);
+    }
+    100%{
+        border-bottom: 43px solid var(--main-color);
+    }
+}
+/* 
+ARROW UP ENDS 
+ARROQ UP AUX BEGINS */
+.arrow-up__aux{
+    width: 86px;
+    height: 131px; 
+    position: absolute;
+    bottom: -350px;
+    left: 456px;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    transform: scale(3.2);
+    animation-name: arrow-up__aux;
+    animation-delay: 7s;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    z-index: 3;
+
+}
+.arrow-up--body__aux{
+    width: 43px;
+    height: 88px;
+    background-color: var(--main-color);
+    /* animation-name: arrow-up__aux-body; */
+    animation-duration: 6s;
+}
+.arrow-up--direction__aux{
+    width: 0;
+    height: 0;
+    border-bottom: 43px solid var(--main-color);
+    border-right: 43px solid rgba(165, 42, 124, 0);
+    border-top: 0px solid rgba(42, 106, 165, 0);
+    border-left: 43px solid rgba(147, 165, 42, 0);
+    /* animation-name: arrow-up__aux-direction; */
+    animation-duration: 3s;
+}
+@keyframes arrow-up__aux{
+    0%{
+        bottom: -350px;
+        -webkit-transform: scale(3.2);
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+        bottom: 400px;
+        -webkit-transform: scale(3.2);
+    }
+}
+
+/* END ARROW UP AUX 
+ARROW LEFT FINAL BEGINS */
+
+.arrow-left-final{
+    width: 178px;
+    height: 86px; 
+    position: absolute;
+    top: 190px;
+    left: -300px;
+    /* left: 615px; */
+    display: flex;
+    align-items: center;
+    animation-name: arrow-left--final , rotate;
+    animation-duration: 10s,1s; 
+    animation-delay: 0s,10.5s;
+    animation-timing-function: cubic-bezier(.49,0,.78,.36),ease;
+transform: scale(2.8);
+animation-fill-mode: forwards;
+}
+
+.arrow-left-final--body{
+    width: 88px;
+    height: 43px;
+    background-color: var(--second-color);
+    animation-name: arrow-left-final--body;
+    animation-duration: 10.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+.arrow-left-final--direction{
+    width: 0;
+    height: 0;
+    border-left: 43px solid var(--second-color);
+    border-right: 43px solid rgba(165, 42, 124, 0);
+    border-top: 43px solid rgba(42, 106, 165, 0);
+    border-bottom: 43px solid rgba(147, 165, 42, 0);
+    animation-name: arrow-left-final--direction;
+    animation-duration: 10s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes arrow-left--final{
+    40%{
+        left: -350px;
+        transform: scale(2.8);
+    }
+    50%{
+        left: 1380px;
+        transform: scale(2.8);
+        opacity: 1;
+    }
+    88%{
+        opacity: 0;
+        left: 1380px;   
+        transform: scale(1);
+
+    }
+    89%{
+        left: -50px;
+        opacity: 0;
+        transform: scale(1);
+    }
+    90%{
+        left: -450px;
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+        left: 615px;
+        transform: scale(1);
+    }        
+    
+}
+@keyframes arrow-left-final--body{
+    40%{
+        background-color: var(--second-color);
+    }
+    50%{
+        background-color: var(--second-color);
+    }
+    90%{
+        background-color: rgb(209, 209, 253);
+        transform: scaleX(1);
+        width: 88px;
+        height: 43px;
+        margin-left: 0;
+    }
+    98%{
+        margin-left: 10px;
+        width: 70px;
+        height: 53px;
+    }
+    100%{
+        margin-left: 0;
+        width: 88px;
+        height: 43px;
+        background-color: rgb(209, 209, 253);
+    }
+}
+
+@keyframes arrow-left-final--direction{
+    40%{
+        border-left: 43px solid var(--second-color);
+    }
+    50%{
+        border-left: 43px solid var(--second-color);
+    }
+    90%{
+        border-left: 43px solid rgb(209, 209, 253);
+    }
+    100%{
+        border-left: 43px solid rgb(209, 209, 253);
     }
 }
