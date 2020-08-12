@@ -187,7 +187,7 @@ animation-fill-mode: forwards;
 
 }
 .letter-E-second{
-    width: 60px;
+    width: 90px;
     height: 44px;
     background-color: var(--second-color);
     margin-bottom: 26px;
@@ -584,7 +584,7 @@ ARROQ UP AUX BEGINS */
 ARROW LEFT FINAL BEGINS */
 
 .arrow-left-final{
-    width: 178px;
+    width: 170px;
     height: 86px; 
     position: absolute;
     top: 190px;
@@ -596,7 +596,7 @@ ARROW LEFT FINAL BEGINS */
     animation-duration: 10s,1s; 
     animation-delay: 0s,10.5s;
     animation-timing-function: cubic-bezier(.49,0,.78,.36),ease;
-transform: scale(2.8);
+transform: scale(1);
 animation-fill-mode: forwards;
 }
 
