@@ -5,4 +5,4 @@
     But a simple fix is using .svg files por "ed" and "ex" letters.
 </p>
 <h2>You can visit the animation in the following link:</h2>
-<a href="https://fercc1097.github.io/FedexAnimation/"></a>
+<h3><a href="https://fercc1097.github.io/FedexAnimation/">Ver página</a></h3>
